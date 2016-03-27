@@ -1,0 +1,36 @@
+<dj-database-url>
+	<12factor-app>
+		The code for a twelve-factor app makes no distinction between local and third party services. 
+		To the app, both are attached resources, accessed via a URL or other locator/credentials stored in the config. 
+		A deploy of the twelve-factor app should be able to swap out a local MySQL database with one managed by a third party (such as Amazon RDS) without any changes to the app’s code. 
+		Likewise, a local SMTP server could be swapped with a third-party SMTP service (such as Postmark) without code changes. 
+		In both cases, only the resource handle in the config needs to change.
+	</12factor-app>
+	<description>
+		This simple Django utility allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application.
+		The dj_database_url.config method returns a Django database connection dictionary, populated with all the data specified in your URL. There is also a conn_max_age argument to easily enable Django's connection pool.
+		If you'd rather not use an environment variable, you can pass a URL in directly instead to dj_database_url.parse.
+	</description>
+</dj-database-url>
+<gunicorn>
+	<description>
+		Gunicorn ‘Green Unicorn’ is a Python WSGI HTTP Server for UNIX. It’s a pre-fork worker model ported from Ruby’s Unicorn project. The Gunicorn server is broadly compatible with various web frameworks, simply implemented, light on server resource usage, and fairly speedy.
+	</description>
+</gunicorn>
+<whitenoise>
+	<description>
+		With a couple of lines of config WhiteNoise allows your web app to serve its own static files, making it a self-contained unit that can be deployed anywhere without relying on nginx, Amazon S3 or any other external service. (Especially useful on Heroku, OpenShift and other PaaS providers.)
+		It's designed to work nicely with a CDN for high-traffic sites so you don't have to sacrifice performance to benefit from simplicity.
+		WhiteNoise works with any WSGI-compatible app but has some special auto-configuration features for Django.
+		WhiteNoise takes care of best-practices for you, for instance:
+		 - Serving compressed content (gzip and Brotli formats, handling Accept-Encoding and Vary headers correctly)
+		 - Setting far-future cache headers on content which won't change
+	</description>
+</whitenoise>
+<psycopg2>
+	<description>
+		Psycopg is the most popular PostgreSQL adapter for the Python programming language. 
+		At its core it fully implements the Python DB API 2.0 specifications. 
+		Several extensions allow access to many of the features offered by PostgreSQL.
+	</description>
+</psycopg2>
