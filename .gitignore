@@ -1,0 +1,5 @@
+*.pyc
+venv-kocic-135-b
+staticfiles
+local_settings.pykocic.sqlite3
+__pycache__
