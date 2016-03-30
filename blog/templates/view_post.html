@@ -1,7 +1,28 @@
 {% extends 'base.html' %} 
 {% block head_title %}{{ post.title }}{% endblock %}
-{% block title %}{{ post.title }}{% endblock %}
+{% block title %}<div id="maintitle">Viewing post</div>{% endblock %}
 
 {% block content %}
+<div id="container">
+	<div id="menu">
+		<ul>
+		<li><a href="/">Home</a></li>
+    {% if categories %}
+        {% for category in categories %}
+            <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
+        {% endfor %}
+	</div>
+    {% endif %}
+		</ul>
+	</div>
+</div>
+<div id="container">
+<h1>{{ post.title }}</h1>
+<h3>Category: {{ post.category }}<h3>
+</div>
+<div id="container">
+<p>
     {{ post.body }}
+</p>
+</div>
 {% endblock %}

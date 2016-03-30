@@ -10,11 +10,13 @@ def index(request):
         })
 def view_post(request, slug):
     return render_to_response('view_post.html', {
+        'categories': Category.objects.all(),
         'post': get_object_or_404(Blog, slug=slug)
         })
 def view_category(request, slug):
     category = get_object_or_404(Category, slug=slug)
     return render_to_response('view_category.html', {
+        'categories': Category.objects.all(),
         'category': category,
         'posts': Blog.objects.filter(category=category)[:5]
         })

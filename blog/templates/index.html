@@ -1,27 +1,35 @@
 {% extends 'base.html' %}
-{% block title %}Welcome to my blog{% endblock %}
+{% block title %}<div id="maintitle">Welcome to my blog</div>{% endblock %}
 
 {% block content %}
-    <h2>Categories</h2>
+<div id="container"> 
+    <h1>Categories</h1>
+	
     {% if categories %}
-        <ul>
+	<div id="menu"> 
+		<ul>
         {% for category in categories %}
             <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
         {% endfor %}
         </ul>
+	</div>
     {% else %}
-        <p>There are no posts.</p>
+        <p>There are no categories.</p>
     {% endif %}
+</div>
 
-    <h2>Posts</h2>
+<div id="container">	
+    <h1>Posts</h1>
     {% if posts %}
+	<div id="menu"> 
         <ul>
         {% for post in posts %}
             <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
         {% endfor %}
         </ul>
+	</div>
     {% else %}
         <p>There are no posts.</p>
     {% endif %}
-
+</div>
 {% endblock %}
