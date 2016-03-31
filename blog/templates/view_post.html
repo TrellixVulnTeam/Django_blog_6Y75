@@ -18,7 +18,24 @@
 </div>
 <div id="container">
 <h1>{{ post.title }}</h1>
-<h3>Category: {{ post.category }}<h3>
+<table align="center" width="auto">
+	<tr>
+		<td>
+			<h4><b>Category:</b></h4>
+		</td>
+		<td>
+			<h4>{{ post.category }}</h4>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<h4><b>Added on:</b></h4>
+		</td>
+		<td>
+			<h4>{{ post.posted }}</h4>
+		</td>
+	</tr>
+</table>
 </div>
 <div id="container">
 <p>
